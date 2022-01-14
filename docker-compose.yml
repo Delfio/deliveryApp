@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db_pg
+    ports:
+      - "54340:5432"
+  
+  # web:
+  #   build: .
+  #   command: python ./mysite/manage.py runserver 0.0.0.0:8000
+  #   volumes:
+  #     - .:/code
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - POSTGRES_NAME=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #   depends_on:
+  #     - db
